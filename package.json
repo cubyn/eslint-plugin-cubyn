@@ -1,0 +1,22 @@
+{
+  "name": "eslint-plugin-cubyn",
+  "version": "1.0.0",
+  "description": "EsLint rules for Cubyn",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cubyn/eslint-plugin-cubyn.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cubyn/eslint-plugin-cubyn/issues"
+  },
+  "homepage": "https://github.com/cubyn/eslint-plugin-cubyn#readme",
+  "devDependencies": {
+    "eslint": "^2.10.2"
+  }
+}
