@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-cubyn",
-  "version": "1.0.03",
+  "version": "1.0.4",
   "description": "EsLint rules for Cubyn",
   "main": "index.js",
   "scripts": {
