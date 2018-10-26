@@ -1,9 +1,9 @@
-const rule = require('../../../lib/rules/objection-limit-before-first');
+const rule = require('../../../lib/rules/limit-before-first');
 const { RuleTester } = require('eslint');
 
 const ruleTester = new RuleTester({ parserOptions: { ecmaVersion: 8 } });
 
-ruleTester.run('objection-limit-before-first', rule, {
+ruleTester.run('limit-before-first', rule, {
   valid: [
     `
     const Contract = () => {};

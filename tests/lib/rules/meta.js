@@ -1,9 +1,9 @@
-const rule = require('../../../lib/rules/controller-meta');
+const rule = require('../../../lib/rules/meta');
 const { RuleTester } = require('eslint');
 
 const ruleTester = new RuleTester({ parserOptions: { ecmaVersion: 8 } });
 
-ruleTester.run('controller-meta', rule, {
+ruleTester.run('meta', rule, {
   valid: ['const meta = { key: "value" };'],
   invalid: [
     {

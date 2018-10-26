@@ -1,9 +1,9 @@
-const rule = require('../../../lib/rules/controller-meta-description');
+const rule = require('../../../lib/rules/meta-description');
 const { RuleTester } = require('eslint');
 
 const ruleTester = new RuleTester({ parserOptions: { ecmaVersion: 8 } });
 
-ruleTester.run('controller-meta-description', rule, {
+ruleTester.run('meta-description', rule, {
   valid: [
     'const meta = { description: "Lorem ipsum dolor sit amet." };',
     'const meta = { description: "Lorem ipsum dolor sit amet.", key2: "value2" };',
