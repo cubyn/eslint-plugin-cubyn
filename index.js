@@ -22,35 +22,35 @@ module.exports = {
           files: [
             'src/controllers/**/index.js',
             'src/lambdas/**/index.js',
-            'src/listeners/**/index.js'
+            'src/listeners/**/index.js',
           ],
           rules: {
             'cubyn/await-invoke': 'error',
             'cubyn/await-publish': 'error',
-            'cubyn/limit-before-first': 'error'
-          }
+            'cubyn/limit-before-first': 'error',
+          },
         },
         {
           files: [
             'src/controllers/**/index.js',
             'src/lambdas/**/index.js',
-            'src/listeners/**/index.js'
+            'src/listeners/**/index.js',
           ],
           rules: {
             'cubyn/meta': 'error',
             'cubyn/meta-description': 'error',
-            'cubyn/meta-permissions': 'error'
-          }
-        }
-      ]
-    }
+            'cubyn/meta-permissions': 'error',
+          },
+        },
+      ],
+    },
   },
   rules: {
     'await-invoke': awaitInvoke,
     'await-publish': awaitPublish,
     'limit-before-first': limitBeforeFirst,
-    'meta': meta,
+    meta,
     'meta-description': metaDescription,
     'meta-permissions': metaPermissions,
-  }
+  },
 };
