@@ -1,5 +1,5 @@
-const rule = require('../../../lib/rules/limit-before-first');
 const { RuleTester } = require('eslint');
+const rule = require('../../../lib/rules/limit-before-first');
 
 const ruleTester = new RuleTester({ parserOptions: { ecmaVersion: 8 } });
 
@@ -12,7 +12,7 @@ ruleTester.run('limit-before-first', rule, {
     `
     const Contract = () => {};
     Contract.query().limit(2).select('id').first();
-    `
+    `,
   ],
   invalid: [
     {
@@ -21,7 +21,7 @@ ruleTester.run('limit-before-first', rule, {
     const Contract = () => {};
     Contract.query().first();
       `,
-      errors: [{ messageId: 'missing', type: 'Identifier' }]
+      errors: [{ messageId: 'missing', type: 'Identifier' }],
     },
     {
       code:
@@ -29,7 +29,7 @@ ruleTester.run('limit-before-first', rule, {
     const Contract = () => {};
     Contract.query().first().limit(1);
       `,
-      errors: [{ messageId: 'missing', type: 'Identifier' }]
-    }
-  ]
+      errors: [{ messageId: 'missing', type: 'Identifier' }],
+    },
+  ],
 });

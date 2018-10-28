@@ -1,5 +1,5 @@
-const rule = require('../../../lib/rules/meta-description');
 const { RuleTester } = require('eslint');
+const rule = require('../../../lib/rules/meta-description');
 
 const ruleTester = new RuleTester({ parserOptions: { ecmaVersion: 8 } });
 
@@ -11,15 +11,15 @@ ruleTester.run('meta-description', rule, {
   invalid: [
     {
       code: 'const meta = {};',
-      errors: [{ messageId: 'missing', type: 'Program' }]
+      errors: [{ messageId: 'missing', type: 'Program' }],
     },
     {
       code: 'const meta = { description: null };',
-      errors: [{ messageId: 'missing', type: 'Program' }]
+      errors: [{ messageId: 'missing', type: 'Program' }],
     },
     {
       code: 'const meta = { description: "" };',
-      errors: [{ messageId: 'missing', type: 'Program' }]
-    }
-  ]
+      errors: [{ messageId: 'missing', type: 'Program' }],
+    },
+  ],
 });

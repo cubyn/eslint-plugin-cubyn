@@ -1,5 +1,5 @@
-const rule = require('../../../lib/rules/await-publish');
 const { RuleTester } = require('eslint');
+const rule = require('../../../lib/rules/await-publish');
 
 const ruleTester = new RuleTester({ parserOptions: { ecmaVersion: 8 } });
 
@@ -9,7 +9,7 @@ ruleTester.run('await-publish', rule, {
     async function handler() {
       const publish = () => new Promise();
       await publish("topic/parcel.created:v1");
-    }`
+    }`,
   ],
   invalid: [
     {
@@ -19,7 +19,7 @@ ruleTester.run('await-publish', rule, {
       const publish = () => new Promise();
       publish("topic/parcel.created:v1");
     }`,
-      errors: [{ messageId: 'missing', type: 'Identifier' }]
-    }
-  ]
+      errors: [{ messageId: 'missing', type: 'Identifier' }],
+    },
+  ],
 });

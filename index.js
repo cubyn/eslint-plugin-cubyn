@@ -20,9 +20,9 @@ module.exports = {
       overrides: [
         {
           files: [
-            'src/controllers/**/*',
-            'src/lambdas/**/*',
-            'src/listeners/**/*'
+            'src/controllers/**/index.js',
+            'src/lambdas/**/index.js',
+            'src/listeners/**/index.js'
           ],
           rules: {
             'cubyn/await-invoke': 'error',
