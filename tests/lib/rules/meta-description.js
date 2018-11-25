@@ -5,8 +5,8 @@ const ruleTester = new RuleTester({ parserOptions: { ecmaVersion: 8 } });
 
 ruleTester.run('meta-description', rule, {
   valid: [
-    'const meta = { description: "Lorem ipsum dolor sit amet." };',
-    'const meta = { description: "Lorem ipsum dolor sit amet.", key2: "value2" };',
+    'const meta = { description: \'Lorem ipsum dolor sit amet.\' };',
+    'const meta = { description: \'Lorem ipsum dolor sit amet.\', key2: \'value2\' };',
   ],
   invalid: [
     {
@@ -18,7 +18,7 @@ ruleTester.run('meta-description', rule, {
       errors: [{ messageId: 'missing', type: 'Program' }],
     },
     {
-      code: 'const meta = { description: "" };',
+      code: 'const meta = { description: \'\' };',
       errors: [{ messageId: 'missing', type: 'Program' }],
     },
   ],

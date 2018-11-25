@@ -47,15 +47,6 @@ module.exports = {
             'cubyn/await-invoke': 'error',
             'cubyn/await-publish': 'error',
             'cubyn/limit-before-first': 'error',
-          },
-        },
-        {
-          files: [
-            'src/controllers/**/index.js',
-            'src/lambdas/**/index.js',
-            'src/listeners/**/index.js',
-          ],
-          rules: {
             'cubyn/meta-description': 'error',
             'cubyn/meta-export': 'error',
             'cubyn/meta-permissions': 'error',
