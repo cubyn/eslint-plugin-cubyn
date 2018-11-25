@@ -1,5 +1,5 @@
-const awaitInvoke = require('./lib/rules/await-invoke');
-const awaitPublish = require('./lib/rules/await-publish');
+// const awaitInvoke = require('./lib/rules/await-invoke');
+// const awaitPublish = require('./lib/rules/await-publish');
 const limitBeforeFirst = require('./lib/rules/limit-before-first');
 const metaDescription = require('./lib/rules/meta-description');
 const metaExport = require('./lib/rules/meta-export');
@@ -18,8 +18,8 @@ module.exports = {
         node: true,
       },
       rules: {
-        'cubyn/await-invoke': 'off',
-        'cubyn/await-publish': 'off',
+        // 'cubyn/await-invoke': 'off',
+        // 'cubyn/await-publish': 'off',
         'cubyn/limit-before-first': 'off',
         'cubyn/meta-description': 'off',
         'cubyn/meta-export': 'off',
@@ -44,8 +44,8 @@ module.exports = {
             'src/listeners/**/index.js',
           ],
           rules: {
-            'cubyn/await-invoke': 'error',
-            'cubyn/await-publish': 'error',
+            // 'cubyn/await-invoke': 'error',
+            // 'cubyn/await-publish': 'error',
             'cubyn/limit-before-first': 'error',
             'cubyn/meta-description': 'error',
             'cubyn/meta-export': 'error',
@@ -56,8 +56,8 @@ module.exports = {
     },
   },
   rules: {
-    'await-invoke': awaitInvoke,
-    'await-publish': awaitPublish,
+    // 'await-invoke': awaitInvoke,
+    // 'await-publish': awaitPublish,
     'limit-before-first': limitBeforeFirst,
     'meta-description': metaDescription,
     'meta-permissions': metaPermissions,
