@@ -1,5 +1,5 @@
 const { RuleTester } = require('eslint');
-const rule = require('../../../lib/rules/meta-presence');
+const rule = require('../../../lib/rules/meta-export');
 
 const ruleTester = new RuleTester({ parserOptions: { ecmaVersion: 8 } });
 

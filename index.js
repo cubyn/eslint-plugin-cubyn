@@ -2,8 +2,8 @@ const awaitInvoke = require('./lib/rules/await-invoke');
 const awaitPublish = require('./lib/rules/await-publish');
 const limitBeforeFirst = require('./lib/rules/limit-before-first');
 const metaDescription = require('./lib/rules/meta-description');
+const metaExport = require('./lib/rules/meta-export');
 const metaPermissions = require('./lib/rules/meta-permissions');
-const metaPresence = require('./lib/rules/meta-presence');
 
 module.exports = {
   configs: {
@@ -22,8 +22,8 @@ module.exports = {
         'cubyn/await-publish': 'off',
         'cubyn/limit-before-first': 'off',
         'cubyn/meta-description': 'off',
+        'cubyn/meta-export': 'off',
         'cubyn/meta-permissions': 'off',
-        'cubyn/meta-presence': 'off',
 
         'max-depth': ['error', 3],
         'max-len': ['error', 100, 2, { ignoreStrings: false }],
@@ -57,8 +57,8 @@ module.exports = {
           ],
           rules: {
             'cubyn/meta-description': 'error',
+            'cubyn/meta-export': 'error',
             'cubyn/meta-permissions': 'error',
-            'cubyn/meta-presence': 'error',
           },
         },
       ],
@@ -70,6 +70,6 @@ module.exports = {
     'limit-before-first': limitBeforeFirst,
     'meta-description': metaDescription,
     'meta-permissions': metaPermissions,
-    'meta-presence': metaPresence,
+    'meta-export': metaExport,
   },
 };
