@@ -1,2 +1,3 @@
 # eslint-plugin-cubyn
-EsLint rules for Javascript
+
+Enforce Cubyn standard style
