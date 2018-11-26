@@ -11,7 +11,9 @@ module.exports = {
       extends: [
         'airbnb-base',
       ],
-      plugins: ['cubyn'],
+      plugins: [
+        'cubyn',
+      ],
       env: {
         es6: true,
         jest: true,
