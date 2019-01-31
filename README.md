@@ -2,9 +2,20 @@
 
 > Enforce Cubyn standard style
 
-Contains Cubyn VNext rules and Airbnb rules activations, updates and deactivations.
+Contains:
 
-ESLint [rules explanations](https://eslint.org/docs/rules/)
+* Cubyn VNext rules (disable in `v2.1.0`)
+* Airbnb based rules, with some activations, updates and deactivations
+
+ESLint [rules explanations](https://eslint.org/docs/rules/).
+
+## Installation
+
+```bash
+$ yarn add -D eslint-plugin-cubyn
+```
+
+`eslint`, `eslint-config-airbnb-base` and `eslint-plugin-import` packages are peer dependencies of Cubyn linter, there is no need to add them.
 
 ## Usage
 
