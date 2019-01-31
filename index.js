@@ -1,9 +1,4 @@
-// const awaitInvoke = require('./lib/rules/await-invoke');
-// const awaitPublish = require('./lib/rules/await-publish');
-const limitBeforeFirst = require('./lib/rules/limit-before-first');
-const metaDescription = require('./lib/rules/meta-description');
-const metaExport = require('./lib/rules/meta-export');
-const metaPermissions = require('./lib/rules/meta-permissions');
+// const metaPermissions = require('./lib/rules/meta-permissions');
 
 module.exports = {
   configs: {
@@ -11,56 +6,98 @@ module.exports = {
       extends: [
         'airbnb-base',
       ],
-      plugins: ['cubyn'],
       env: {
         es6: true,
-        jest: true,
         node: true,
       },
       rules: {
-        // 'cubyn/await-invoke': 'off',
-        // 'cubyn/await-publish': 'off',
-        'cubyn/limit-before-first': 'off',
-        'cubyn/meta-description': 'off',
-        'cubyn/meta-export': 'off',
-        'cubyn/meta-permissions': 'off',
+        //
+        // Cubyn rules
+        //
 
-        'max-depth': ['error', 3],
-        'max-len': ['error', 100, 2, { ignoreStrings: false }],
-        'no-param-reassign': 'off',
-        'no-plusplus': 'off',
-        'no-use-before-define': 'off',
-        complexity: ['error', 5],
+        // 'cubyn/meta-permissions': 'off',
+
+        //
+        // Airbnb rules
+        //
+
+        // Activations/updates
+
+        'func-style': ['error', 'declaration', { allowArrowFunctions: true }],
+        'id-length': ['error', { min: 3, properties: 'never' }],
+        'line-comment-position': ['error', {
+          position: 'above',
+          ignorePattern: '',
+          applyDefaultPatterns: true,
+        }],
+        'max-depth': ['error', 4],
+        'max-nested-callbacks': ['error', { max: 3 }],
+        'max-statements-per-line': ['error', { max: 1 }],
+        'newline-per-chained-call': ['error', { ignoreChainWithDepth: 2 }],
+        'no-eq-null': 'error',
+        'no-implicit-globals': 'error',
+        'no-magic-numbers': ['error', {
+          ignoreArrayIndexes: true,
+          ignore: [ -1, 0, 1, 2, 10],
+          enforceConst: true
+        }],
+        'no-shadow': 'error',
+        'no-undefined': 'error',
+        'no-useless-call': 'error',
+        'no-useless-catch': 'error',
         'object-curly-newline': ['error', {
           ObjectExpression: { consistent: true, multiline: true },
           ObjectPattern: { consistent: true, multiline: true },
         }],
+        'padding-line-between-statements': [
+          'error',
+          {
+            blankLine: 'always',
+            prev: '*',
+            next: 'return',
+          },
+          {
+            blankLine: 'always',
+            prev: ['const', 'let', 'var'],
+            next: '*',
+          },
+          {
+            blankLine: 'any',
+            prev: ['const', 'let', 'var'],
+            next: ['const', 'let', 'var', 'expression'],
+          },
+        ],
+        'prefer-object-spread': 'error',
+        complexity: ['error', 10],
+
+        // Deactivations
+
+        'no-plusplus': 'off',
+        'no-use-before-define': 'off',
       },
       overrides: [
+        // {
+        //   files: [
+        //     'src/controllers/**/index.js',
+        //     'src/lambdas/**/index.js',
+        //     'src/listeners/**/index.js',
+        //   ],
+        //   rules: {
+        //     'cubyn/meta-permissions': 'error',
+        //   },
+        // },
         {
           files: [
-            'src/controllers/**/index.js',
-            'src/lambdas/**/index.js',
-            'src/listeners/**/index.js',
+            '*.spec.js',
+            'tests/**',
           ],
           rules: {
-            // 'cubyn/await-invoke': 'error',
-            // 'cubyn/await-publish': 'error',
-            'cubyn/limit-before-first': 'error',
-            'cubyn/meta-description': 'error',
-            'cubyn/meta-export': 'error',
-            'cubyn/meta-permissions': 'error',
+            'id-length': ['off'],
+            'max-nested-callbacks': ['error', { max: 5 }],
+            'no-magic-numbers': 'off',
           },
         },
       ],
     },
-  },
-  rules: {
-    // 'await-invoke': awaitInvoke,
-    // 'await-publish': awaitPublish,
-    'limit-before-first': limitBeforeFirst,
-    'meta-description': metaDescription,
-    'meta-permissions': metaPermissions,
-    'meta-export': metaExport,
   },
 };
