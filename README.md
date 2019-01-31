@@ -15,7 +15,26 @@ ESLint [rules explanations](https://eslint.org/docs/rules/).
 $ yarn add -D eslint-plugin-cubyn
 ```
 
-`eslint`, `eslint-config-airbnb-base` and `eslint-plugin-import` packages are peer dependencies of Cubyn linter, there is no need to add them.
+~~`eslint`, `eslint-config-airbnb-base` and `eslint-plugin-import` packages are peer dependencies of Cubyn linter, there is no need to add them.~~
+
+Since there were bugs ([1](https://github.com/airbnb/javascript/issues/1913) and , [2](https://github.com/eslint/eslint/issues/8547)) in Yarn dependencies resolutions, the following packages must be installed as dev dependencies:
+
+```bash
+$ yarn add -D eslint eslint-config-airbnb-base eslint-plugin-import
+```
+
+Dev dependencies of target projet must contains at least (if Jest is used):
+
+```json
+"devDependencies": {
+  "eslint": "^5.12.1",
+  "eslint-config-airbnb-base": "^13.1.0",
+  "eslint-plugin-cubyn": "^2.1.0",
+  "eslint-plugin-import": "^2.16.0",
+  "eslint-plugin-jest": "^21.21.0",
+  "jest": "^23.5.0"
+}
+```
 
 ## Usage
 
