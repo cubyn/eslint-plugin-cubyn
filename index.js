@@ -24,10 +24,13 @@ module.exports = {
         // Activations/updates
 
         'func-style': ['error', 'declaration', { allowArrowFunctions: true }],
-        'id-length': ['error', { min: 3, properties: 'never' }],
+        'id-length': ['error', {
+          min: 3,
+          properties: 'never',
+          exceptions: ['fs', 'os', 'vm', 'i'],
+        }],
         'line-comment-position': ['error', {
           position: 'above',
-          ignorePattern: '',
           applyDefaultPatterns: true,
         }],
         'max-depth': ['error', 4],
