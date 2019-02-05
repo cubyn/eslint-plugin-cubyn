@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.1.3
+
+05/02/2019
+
+* Update `max-nested-callbacks` rule
+
 ## v2.1.2
 
 03/02/2019
