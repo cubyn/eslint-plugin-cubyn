@@ -7,7 +7,28 @@ Contains:
 * Cubyn VNext rules (disable in `v2.1.0`)
 * Airbnb based rules, with some activations, updates and deactivations
 
+
+## Why a linter?
+
+* Avoid code errors
+* Apply community best practices
+* Improve code quality
+* Gives immediate feedback
+* Avoid too much discussions on PRs
+
+## Why a rule breaks my code?
+
 ESLint [rules explanations](https://eslint.org/docs/rules/).
+
+Search on web why this rule exists.
+
+## Can I disable a rule?
+
+No.
+
+Modifies the code to match the rule.
+
+(There is exceptions.)
 
 ## Installation
 

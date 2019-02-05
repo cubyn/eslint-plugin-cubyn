@@ -34,7 +34,7 @@ module.exports = {
           applyDefaultPatterns: true,
         }],
         'max-depth': ['error', 4],
-        'max-nested-callbacks': ['error', { max: 3 }],
+        'max-nested-callbacks': ['error', { max: 4 }],
         'max-statements-per-line': ['error', { max: 1 }],
         'newline-per-chained-call': ['error', { ignoreChainWithDepth: 2 }],
         'no-eq-null': 'error',
