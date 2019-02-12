@@ -79,16 +79,21 @@ module.exports = {
         'no-use-before-define': 'off',
       },
       overrides: [
-        // {
-        //   files: [
-        //     'src/controllers/**/index.js',
-        //     'src/lambdas/**/index.js',
-        //     'src/listeners/**/index.js',
-        //   ],
-        //   rules: {
-        //     'cubyn/meta-permissions': 'error',
-        //   },
-        // },
+        {
+          files: [
+            'src/controllers/**/index.js',
+            'src/lambdas/**/index.js',
+            'src/listeners/**/index.js',
+          ],
+          rules: {
+            // 'cubyn/meta-permissions': 'error',
+
+            'no-param-reassign': ['error', {
+              props: true,
+              ignorePropertyModificationsFor: ['data', 'context'],
+            }],
+          },
+        },
         {
           files: [
             '*.spec.js',
