@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.1.4
+
+12/02/2019
+
+* Allow `param-reassign` for `data` and `context` in `controllers/`, `lambdas/` and `listeners/`
+
 ## v2.1.3
 
 05/02/2019
