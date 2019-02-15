@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.1.5
+
+15/02/2019
+
+* Allow `param-reassign` for `acc` (used in `reduce` function)
+
 ## v2.1.4
 
 12/02/2019
