@@ -44,10 +44,6 @@ module.exports = {
           ignore: [ -1, 0, 1, 2, 10],
           enforceConst: true
         }],
-        'no-param-reassign': ['error', {
-          props: true,
-          ignorePropertyModificationsFor: ['acc'],
-        }],
         'no-shadow': 'error',
         'no-undefined': 'error',
         'no-useless-call': 'error',
