@@ -100,8 +100,8 @@ module.exports = {
             'tests/**',
           ],
           rules: {
-            'id-length': ['off'],
-            'max-nested-callbacks': ['error', { max: 5 }],
+            'id-length': 'off',
+            'max-nested-callbacks': ['error', { max: 10 }],
             'no-magic-numbers': 'off',
           },
         },

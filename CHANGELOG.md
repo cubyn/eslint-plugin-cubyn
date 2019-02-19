@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.1.6
+
+19/02/2019
+
+* Update `max-nested-callbacks` rule for spec files
+
 ## v2.1.5
 
 15/02/2019
