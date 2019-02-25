@@ -44,6 +44,7 @@ module.exports = {
           ignore: [ -1, 0, 1, 2, 10],
           enforceConst: true
         }],
+        'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0 }],
         'no-shadow': 'error',
         'no-undefined': 'error',
         'no-useless-call': 'error',

@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.1.7
+
+25/02/2019
+
+* Update `no-multiple-empty-lines` rule
+
 ## v2.1.6
 
 19/02/2019
