@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-cubyn",
-  "version": "2.1.7",
+  "version": "2.2.0",
   "description": "Enforce Cubyn standard style",
   "main": "index.js",
   "license": "ISC",
@@ -9,6 +9,7 @@
     "lint": "./node_modules/.bin/eslint lib tests"
   },
   "devDependencies": {
+    "eslint-plugin-unicorn": "^8.0.2",
     "mocha": "^3.1.2"
   },
   "peerDependencies": {

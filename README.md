@@ -5,7 +5,8 @@
 Contains:
 
 * Cubyn VNext rules (disable in `v2.1.0`)
-* Airbnb based rules, with some activations, updates and deactivations
+* [Airbnb based rules](https://github.com/airbnb/javascript), with some activations, updates and deactivations
+* Few [Unicorn rules](https://github.com/sindresorhus/eslint-plugin-unicorn)
 
 ## Why a linter?
 
