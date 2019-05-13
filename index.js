@@ -29,7 +29,10 @@ module.exports = {
         'unicorn/filename-case': ['error', { case: 'kebabCase' }],
         'unicorn/import-index': 'error',
         'unicorn/no-array-instanceof': 'error',
+        'unicorn/no-for-loop': 'error',
         'unicorn/no-new-buffer': 'error',
+        'unicorn/prefer-includes': 'error',
+        'unicorn/regex-shorthand': 'error',
 
         //
         // Airbnb rules
