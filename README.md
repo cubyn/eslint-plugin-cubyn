@@ -33,7 +33,7 @@ No. Modifies the code to match the rule.
 Since there were bugs ([1](https://github.com/airbnb/javascript/issues/1913) and , [2](https://github.com/eslint/eslint/issues/8547)) in Yarn dependencies resolutions, the following packages must be installed as dev dependencies:
 
 ```bash
-$ yarn add -D eslint eslint-config-airbnb-base eslint-plugin-import eslint-plugin-cubyn
+$ yarn add -D eslint eslint-config-airbnb-base eslint-plugin-unicorn eslint-plugin-import eslint-plugin-cubyn
 ```
 
 Dev dependencies of target project must contains at least (if Jest):
@@ -45,6 +45,7 @@ Dev dependencies of target project must contains at least (if Jest):
   "eslint-plugin-cubyn": "^2.1.0",
   "eslint-plugin-import": "^2.16.0",
   "eslint-plugin-jest": "^21.21.0",
+  "eslint-plugin-unicorn": "^8.0.2",
   "jest": "^23.5.0"
 }
 ```

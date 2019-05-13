@@ -6,6 +6,9 @@ module.exports = {
       extends: [
         'airbnb-base',
       ],
+      plugins: [
+        'unicorn',
+      ],
       env: {
         es6: true,
         node: true,
@@ -16,6 +19,17 @@ module.exports = {
         //
 
         // 'cubyn/meta-permissions': 'off',
+
+        //
+        // Unicorn rules
+        //
+
+        // Activations/updates
+
+        'unicorn/filename-case': ['error', { case: 'kebabCase' }],
+        'unicorn/import-index': 'error',
+        'unicorn/no-array-instanceof': 'error',
+        'unicorn/no-new-buffer': 'error',
 
         //
         // Airbnb rules
