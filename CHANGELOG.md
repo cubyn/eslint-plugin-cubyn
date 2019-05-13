@@ -1,5 +1,11 @@
 # Changelog
 
+# v2.2.0
+
+13/05/2019
+
+* Add few Unicorn linter rules
+
 ## v2.1.7
 
 25/02/2019
