@@ -44,7 +44,7 @@ module.exports = {
         'id-length': ['error', {
           min: 3,
           properties: 'never',
-          exceptions: ['fs', 'os', 'vm', 'i'],
+          exceptions: ['fs', 'os', 'vm', 'i', 'id'],
         }],
         'line-comment-position': ['error', {
           position: 'above',
