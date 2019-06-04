@@ -1,5 +1,11 @@
 # Changelog
 
+# v2.2.1
+
+04/06/2019
+
+* Add 'id' to 'id-length' rule exceptions
+
 # v2.2.0
 
 13/05/2019
