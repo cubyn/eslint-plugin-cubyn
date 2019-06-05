@@ -9,7 +9,8 @@
     "lint": "./node_modules/.bin/eslint lib tests"
   },
   "devDependencies": {
-    "eslint-plugin-unicorn": "^8.0.2",
+    "eslint": "^5.16.0",
+    "eslint-plugin-unicorn": "^9.0.0",
     "mocha": "^3.1.2"
   },
   "peerDependencies": {
