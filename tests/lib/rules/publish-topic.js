@@ -18,9 +18,14 @@ ruleTester.run('publish-topic', rule, {
       `
       async function handler() {
         const publish = () => new Promise();
-        await publish("parcel.created:v1");
+        await publish("item.created:v1");
       }`,
       errors: [{ messageId: 'missing', type: 'Identifier' }],
+      output: `
+      async function handler() {
+        const publish = () => new Promise();
+        await publish("topic/item.created:v1");
+      }`,
     },
   ],
 });
