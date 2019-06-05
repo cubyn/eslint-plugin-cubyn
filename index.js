@@ -1,4 +1,4 @@
-// const metaPermissions = require('./lib/rules/meta-permissions');
+const publishTopic = require('./lib/rules/publish-topic');
 
 module.exports = {
   configs: {
@@ -8,6 +8,7 @@ module.exports = {
       ],
       plugins: [
         'unicorn',
+        'cubyn',
       ],
       env: {
         es6: true,
@@ -18,7 +19,7 @@ module.exports = {
         // Cubyn rules
         //
 
-        // 'cubyn/meta-permissions': 'off',
+        'cubyn/publish-topic': 'error',
 
         //
         // Unicorn rules
@@ -58,8 +59,8 @@ module.exports = {
         'no-implicit-globals': 'error',
         'no-magic-numbers': ['error', {
           ignoreArrayIndexes: true,
-          ignore: [ -1, 0, 1, 2, 10],
-          enforceConst: true
+          ignore: [-1, 0, 1, 2, 10],
+          enforceConst: true,
         }],
         'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0 }],
         'no-shadow': 'error',
@@ -104,8 +105,6 @@ module.exports = {
             'src/listeners/**/index.js',
           ],
           rules: {
-            // 'cubyn/meta-permissions': 'error',
-
             'no-param-reassign': ['error', {
               props: true,
               ignorePropertyModificationsFor: ['data', 'context'],
@@ -125,5 +124,8 @@ module.exports = {
         },
       ],
     },
+  },
+  rules: {
+    'publish-topic': publishTopic,
   },
 };
