@@ -1,4 +1,5 @@
 const loggerContext = require('./lib/rules/logger-context');
+const loggerErr = require('./lib/rules/logger-err');
 const publishTopic = require('./lib/rules/publish-topic');
 
 module.exports = {
@@ -23,6 +24,7 @@ module.exports = {
         // Activations/updates
 
         'cubyn/logger-context': 'error',
+        'cubyn/logger-err': 'error',
         'cubyn/publish-topic': 'error',
 
         //
@@ -131,6 +133,7 @@ module.exports = {
   },
   rules: {
     'logger-context': loggerContext,
+    'logger-err': loggerErr,
     'publish-topic': publishTopic,
   },
 };
