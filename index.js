@@ -1,5 +1,6 @@
 const loggerContext = require('./lib/rules/logger-context');
-const loggerErr = require('./lib/rules/logger-err');
+const loggerError = require('./lib/rules/logger-error');
+const metaPermissions = require('./lib/rules/meta-permissions');
 const publishTopic = require('./lib/rules/publish-topic');
 
 module.exports = {
@@ -24,8 +25,12 @@ module.exports = {
         // Activations/updates
 
         'cubyn/logger-context': 'error',
-        'cubyn/logger-err': 'error',
+        'cubyn/logger-error': 'error',
         'cubyn/publish-topic': 'error',
+
+        // Deactivations
+
+        'cubyn/meta-permissions': 'off',
 
         //
         // Unicorn rules
@@ -106,6 +111,14 @@ module.exports = {
       overrides: [
         {
           files: [
+            'src/controllers/**/*.js',
+          ],
+          rules: {
+            'cubyn/meta-permissions': 'error',
+          },
+        },
+        {
+          files: [
             'src/controllers/**/index.js',
             'src/lambdas/**/index.js',
             'src/listeners/**/index.js',
@@ -133,7 +146,8 @@ module.exports = {
   },
   rules: {
     'logger-context': loggerContext,
-    'logger-err': loggerErr,
+    'logger-error': loggerError,
+    'meta-permissions': metaPermissions,
     'publish-topic': publishTopic,
   },
 };
