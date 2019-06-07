@@ -20,7 +20,7 @@ ruleTester.run('publish-topic', rule, {
         const publish = () => new Promise();
         await publish("item.created:v1");
       }`,
-      errors: [{ messageId: 'missing', type: 'Identifier' }],
+      errors: [{ messageId: 'missing', type: 'CallExpression' }],
       output: `
       async function handler() {
         const publish = () => new Promise();
