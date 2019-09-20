@@ -1,5 +1,4 @@
 const loggerContext = require('./lib/rules/logger-context');
-const loggerError = require('./lib/rules/logger-error');
 const metaPermissions = require('./lib/rules/meta-permissions');
 const publishTopic = require('./lib/rules/publish-topic');
 
@@ -25,7 +24,6 @@ module.exports = {
         // Activations/updates
 
         'cubyn/logger-context': 'error',
-        'cubyn/logger-error': 'error',
         'cubyn/publish-topic': 'error',
 
         // Deactivations
@@ -146,7 +144,6 @@ module.exports = {
   },
   rules: {
     'logger-context': loggerContext,
-    'logger-error': loggerError,
     'meta-permissions': metaPermissions,
     'publish-topic': publishTopic,
   },
