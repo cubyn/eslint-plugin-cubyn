@@ -9,6 +9,7 @@ ruleTester.run('meta-permissions', rule, {
     'const meta = { permissions: ["object.action1", "object.action2"] };',
     'const meta = { permissions };',
     'meta.permissions = ["object.action"];',
+    'meta.permissions = [];',
     'meta.permissions = perm;',
   ],
   invalid: [
@@ -18,10 +19,6 @@ ruleTester.run('meta-permissions', rule, {
     },
     {
       code: 'const meta = { permissions: null };',
-      errors: [{ messageId: 'missing', type: 'VariableDeclarator' }],
-    },
-    {
-      code: 'const meta = { permissions: [] };',
       errors: [{ messageId: 'missing', type: 'VariableDeclarator' }],
     },
     {
