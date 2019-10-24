@@ -3,6 +3,7 @@ const loggerError = require('./lib/rules/logger-error');
 const metaPermissions = require('./lib/rules/meta-permissions');
 const publishTopic = require('./lib/rules/publish-topic');
 const transactionAwait = require('./lib/rules/transaction-await');
+const transactionEndingRequired = require('./lib/rules/transaction-ending-required');
 
 module.exports = {
   configs: {
@@ -29,6 +30,7 @@ module.exports = {
         'cubyn/logger-error': 'error',
         'cubyn/publish-topic': 'error',
         'cubyn/transaction-await': 'error',
+        'cubyn/transaction-ending-required': 'error',
 
         // Deactivations
 
@@ -152,5 +154,6 @@ module.exports = {
     'meta-permissions': metaPermissions,
     'publish-topic': publishTopic,
     'transaction-await': transactionAwait,
+    'transaction-ending-required': transactionEndingRequired,
   },
 };
