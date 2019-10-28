@@ -6,14 +6,14 @@
   "license": "ISC",
   "scripts": {
     "test": "mocha tests --recursive",
-    "test-watch": "mocha tests --watch tests/lib/rules/transaction-ending-required.js",
+    "test-watch": "mocha tests --watch",
     "lint": "./node_modules/.bin/eslint lib tests"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.3",
-    "eslint-plugin-unicorn": "^9.0.0",
+    "eslint-plugin-unicorn": "^12.1.0",
     "mocha": "^3.1.2"
   },
   "peerDependencies": {
