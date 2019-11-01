@@ -1,4 +1,8 @@
-// const metaPermissions = require('./lib/rules/meta-permissions');
+const loggerContext = require('./lib/rules/logger-context');
+const loggerError = require('./lib/rules/logger-error');
+const metaPermissions = require('./lib/rules/meta-permissions');
+const noInvokeTopic = require('./lib/rules/no-invoke-topic');
+const transaction = require('./lib/rules/transaction');
 
 module.exports = {
   configs: {
@@ -8,6 +12,7 @@ module.exports = {
       ],
       plugins: [
         'unicorn',
+        'cubyn',
       ],
       env: {
         es6: true,
@@ -18,7 +23,16 @@ module.exports = {
         // Cubyn rules
         //
 
-        // 'cubyn/meta-permissions': 'off',
+        // Activations/updates
+
+        'cubyn/logger-context': 'error',
+        'cubyn/logger-error': 'error',
+        'cubyn/no-invoke-topic': 'error',
+        'cubyn/transaction': 'error',
+
+        // Deactivations
+
+        'cubyn/meta-permissions': 'off',
 
         //
         // Unicorn rules
@@ -58,8 +72,8 @@ module.exports = {
         'no-implicit-globals': 'error',
         'no-magic-numbers': ['error', {
           ignoreArrayIndexes: true,
-          ignore: [ -1, 0, 1, 2, 10],
-          enforceConst: true
+          ignore: [-1, 0, 1, 2, 10],
+          enforceConst: true,
         }],
         'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0 }],
         'no-shadow': 'error',
@@ -99,13 +113,19 @@ module.exports = {
       overrides: [
         {
           files: [
+            'src/controllers/**/*.js',
+          ],
+          rules: {
+            'cubyn/meta-permissions': 'error',
+          },
+        },
+        {
+          files: [
             'src/controllers/**/index.js',
             'src/lambdas/**/index.js',
             'src/listeners/**/index.js',
           ],
           rules: {
-            // 'cubyn/meta-permissions': 'error',
-
             'no-param-reassign': ['error', {
               props: true,
               ignorePropertyModificationsFor: ['data', 'context'],
@@ -125,5 +145,12 @@ module.exports = {
         },
       ],
     },
+  },
+  rules: {
+    'logger-context': loggerContext,
+    'logger-error': loggerError,
+    'meta-permissions': metaPermissions,
+    'no-invoke-topic': noInvokeTopic,
+    transaction,
   },
 };
