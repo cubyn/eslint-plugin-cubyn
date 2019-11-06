@@ -5,13 +5,22 @@ const ruleTester = new RuleTester({ parserOptions: { ecmaVersion: 8 } });
 
 ruleTester.run('logger-error-param', rule, {
   valid: [
-    'logger.error("error message", { error: "Error", id: 1 });',
-    'logger.info("error message", { details: true });',
-    'logger.log("error message", { error: {} });',
+    'logger.error("", { error });',
+    'logger.error("", { error: {} });',
+    'logger.error("", { error: { foo: "bar" } });',
+    'logger.info("", {});',
   ],
   invalid: [
     {
       code: 'logger.error("error message");',
+      errors: [{ messageId: 'missing', type: 'CallExpression' }],
+    },
+    {
+      code: 'logger.error("error message", {});',
+      errors: [{ messageId: 'missing', type: 'CallExpression' }],
+    },
+    {
+      code: 'logger.error("error message", { error: "foo" });',
       errors: [{ messageId: 'missing', type: 'CallExpression' }],
     },
     {

@@ -1,4 +1,4 @@
-const loggerContext = require('./lib/rules/logger-context');
+const loggerContextParam = require('./lib/rules/logger-context-param');
 const loggerErrorParam = require('./lib/rules/logger-error-param');
 const metaPermissions = require('./lib/rules/meta-permissions');
 const noInvokeTopic = require('./lib/rules/no-invoke-topic');
@@ -7,7 +7,7 @@ const transaction = require('./lib/rules/transaction');
 const RULES = {
   CUBYN: {
     // Activations/updates
-    'cubyn/logger-context': 'error',
+    'cubyn/logger-context-param': 'error',
     'cubyn/logger-error-param': 'error',
     'cubyn/no-invoke-topic': 'error',
     'cubyn/transaction': 'error',
@@ -126,7 +126,7 @@ module.exports = {
     },
   },
   rules: {
-    'logger-context': loggerContext,
+    'logger-context-param': loggerContextParam,
     'logger-error-param': loggerErrorParam,
     'meta-permissions': metaPermissions,
     'no-invoke-topic': noInvokeTopic,
