@@ -26,9 +26,25 @@ ruleTester.run('knex-try-trx', rule, {
         try {
           anotherFunction();
           await myTrx.commit();
-        } catch (error) {
+        } catch (err) {
         }
       }
+    `,
+    `
+      const test = async (option) => {
+        const trx = await transaction.start(knex);
+
+        try {
+          if (option === 1) {
+            await trx.commit();
+          } else {
+            await trx.rollback();
+          }
+        } catch (err) {
+        }
+
+        return { ok: true };
+      };
     `,
     // Weird but possible case
     `
