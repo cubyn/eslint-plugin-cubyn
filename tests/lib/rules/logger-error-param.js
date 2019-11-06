@@ -1,16 +1,13 @@
 const { RuleTester } = require('eslint');
-const rule = require('../../../lib/rules/logger-error');
+const rule = require('../../../lib/rules/logger-error-param');
 
 const ruleTester = new RuleTester({ parserOptions: { ecmaVersion: 8 } });
 
-ruleTester.run('logger-error', rule, {
+ruleTester.run('logger-error-param', rule, {
   valid: [
-    'logger.info("error message", { details: true });',
-    'logger.info("error message", { error });',
-    'logger.warn("", { id: 1, context, error });',
-    'logger.log("error message", { error: {}, id: 1 });',
     'logger.error("error message", { error: "Error", id: 1 });',
-    'logger.test("error message", { id: 1 });',
+    'logger.info("error message", { details: true });',
+    'logger.log("error message", { error: {} });',
   ],
   invalid: [
     {
