@@ -2,6 +2,7 @@ const loggerContextParam = require('./lib/rules/logger-context-param');
 const loggerErrorParam = require('./lib/rules/logger-error-param');
 const metaPermissions = require('./lib/rules/meta-permissions');
 const noInvokeTopic = require('./lib/rules/no-invoke-topic');
+const knexAwaitStartTrx = require('./lib/rules/knex-await-start-trx');
 const transaction = require('./lib/rules/transaction');
 
 const RULES = {
@@ -11,6 +12,7 @@ const RULES = {
     'cubyn/logger-error-param': 'error',
     'cubyn/no-invoke-topic': 'error',
     'cubyn/transaction': 'error',
+    'cubyn/knex-await-start-trx': 'error',
     // Deactivations
     'cubyn/meta-permissions': 'off',
   },
@@ -130,6 +132,7 @@ module.exports = {
     'logger-error-param': loggerErrorParam,
     'meta-permissions': metaPermissions,
     'no-invoke-topic': noInvokeTopic,
+    'knex-await-start-trx': knexAwaitStartTrx,
     transaction,
   },
 };
