@@ -54,6 +54,7 @@ module.exports = {
 
         // Activations/updates
 
+        'arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
         'func-style': ['error', 'declaration', { allowArrowFunctions: true }],
         'id-length': ['error', {
           min: 3,
