@@ -5,61 +5,70 @@ const ruleTester = new RuleTester({ parserOptions: { ecmaVersion: 8 } });
 
 ruleTester.run('transaction', rule, {
   valid: [
-    // most common transaction usecase
     `
       async function test() {
         const trx = await transaction.start(knex);
+
         try {
           await trx.commit();
+
           return true;
-        } catch (error) {
+        } catch (err) {
           await trx.rollback();
+
           return false;
         }
       }
     `,
-    // with another name
     `
       async function test() {
         const t = await transaction.start(knex);
+
         try {
           await t.commit();
+
           return true;
-        } catch (error) {
+        } catch (err) {
           await t.rollback();
+
           return false;
         }
       }
     `,
-    // with unrelated function inline
     `
       async function test() {
         const trx = await transaction.start(knex);
+
         try {
           (function () {})();
+
           await trx.commit();
+
           return true;
-        } catch (error) {
+        } catch (err) {
           await trx.rollback();
+
           return false;
         }
       }
     `,
-    // with asserts in try block
     `
       async function test(option) {
         const trx = await transaction.start(knex);
+
         try {
           assert(option === true);
+
           await trx.commit();
+
           return true;
-        } catch (error) {
+        } catch (err) {
           await trx.rollback();
+
           return false;
         }
       }
     `,
-    // with deep asserts in try block
     `
       async function test(option) {
         const trx = await transaction.start(knex);
@@ -68,38 +77,47 @@ ruleTester.run('transaction', rule, {
           if (option.check) {
             assert(option.value === true);
           }
+
           await trx.commit();
+
           return true;
-        } catch (error) {
+        } catch (err) {
           await trx.rollback();
+
           return false;
         }
       }
     `,
-    // with asserts in catch block
     `
       async function test(option) {
         const trx = await transaction.start(knex);
+
         try {
           await trx.commit();
+
           return true;
-        } catch (error) {
+        } catch (err) {
           await trx.rollback();
+
           assert(option === true);
+
           return false;
         }
       }
     `,
-    // with unrelated arrow function inline
     `
       async function test() {
         const trx = await transaction.start(knex);
+
         try {
           [1, 2].map(i => i * 2);
+
           await trx.commit();
+
           return true;
-        } catch (error) {
+        } catch (err) {
           await trx.rollback();
+
           return false;
         }
       }
@@ -109,43 +127,51 @@ ruleTester.run('transaction', rule, {
       const test = async (option) => {
         if (option) {
           const trx = await transaction.start(knex);
+
           try {
             await trx.commit();
+
             return true;
-          } catch (error) {
+          } catch (err) {
             await trx.rollback();
+
             return false;
           }
         }
         return true;
       }
     `,
-    // with transaction started in an inner function
     `
       const test = async (option) => {
         async function testCode() {
           const trx = await transaction.start(knex);
+
           try {
             await trx.commit();
+
             return true;
-          } catch (error) {
+          } catch (err) {
             await trx.rollback();
+
             return false;
           }
         }
+
         return !(await testCode());
       }
     `,
-    // in a class definition
     `
       class Test {
         async update() {
           const trx = await transaction.start(knex);
+
           try {
             await trx.commit();
+
             return true;
-          } catch (error) {
+          } catch (err) {
             await trx.rollback();
+
             return false;
           }
         }
@@ -153,32 +179,6 @@ ruleTester.run('transaction', rule, {
     `,
   ],
   invalid: [
-    // transaction not followed by try/catch
-    {
-      code: `
-        async function test(option) {
-          const trx = await transaction.start(knex);
-          await trx.commit();
-        }
-      `,
-      errors: [{ messageId: 'missingTransactionTryCatch', type: 'CallExpression' }],
-    },
-    // transaction.start not awaited
-    {
-      code: `
-        async function test(option) {
-          const trx = transaction.start(knex);
-          try {
-            await trx.commit();
-            return true;
-          } catch (error) {
-            await trx.rollback();
-            return false;
-          }
-        }
-      `,
-      errors: [{ messageId: 'missingTransactionStartAwait', type: 'CallExpression' }],
-    },
     // transaction not awaited
     {
       code: `
