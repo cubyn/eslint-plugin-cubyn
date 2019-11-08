@@ -12,9 +12,9 @@ const RULES = {
     'cubyn/logger-context-param': 'error',
     'cubyn/logger-error-param': 'error',
     'cubyn/no-invoke-topic': 'error',
-    // 'cubyn/transaction': 'error',
-    'cubyn/knex-await-start-trx': 'error',
-    'cubyn/knex-try-trx': 'error',
+    'cubyn/transaction': 'error',
+    // 'cubyn/knex-await-start-trx': 'error',
+    // 'cubyn/knex-try-trx': 'error',
     // Deactivations
     'cubyn/meta-permissions': 'off',
   },
@@ -29,6 +29,7 @@ const RULES = {
     'unicorn/filename-case': ['error', { case: 'kebabCase' }],
   },
   AIRBNB: {
+    // https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base/rules
     // Activations/updates
     'no-eq-null': 'error',
     'no-implicit-globals': 'error',
@@ -111,7 +112,16 @@ module.exports = {
           rules: {
             'no-param-reassign': ['error', {
               props: true,
-              ignorePropertyModificationsFor: ['data', 'context'],
+              ignorePropertyModificationsFor: [
+                'acc',
+                'data',
+                'ctx',
+                'context',
+                'req',
+                'request',
+                'res',
+                'response',
+              ],
             }],
           },
         },
