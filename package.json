@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-cubyn",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "description": "Enforce Cubyn standard style",
   "main": "index.js",
   "license": "ISC",
@@ -11,6 +11,8 @@
   },
   "devDependencies": {
     "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
     "mocha": "^3.1.2"
   },
   "peerDependencies": {

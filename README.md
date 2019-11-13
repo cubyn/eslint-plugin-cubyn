@@ -5,16 +5,16 @@
 Contains:
 
 * Carotte rules
-* [Airbnb based rules](https://github.com/airbnb/javascript), with some activations, updates and deactivations
+* [Airbnb based rules](https://github.com/airbnb/javascript), with some activation, updates and deactivation
 * Few [Unicorn rules](https://github.com/sindresorhus/eslint-plugin-unicorn)
 
 ## Why a linter?
 
-* Avoid code errors
 * Apply community best practices
+* Avoid errors in code
 * Improve code quality
-* Gives immediate feedback
-* Avoid too much discussions on PRs
+* Gives immediate feedback about a piece of code
+* Make Pull Requests follow a code standard
 
 ## Why a rule breaks my code?
 
@@ -34,7 +34,7 @@ No. Modifies the code to match the rule.
 Since there were bugs ([1](https://github.com/airbnb/javascript/issues/1913) and [2](https://github.com/eslint/eslint/issues/8547)) in Yarn dependencies resolutions, the following packages must be installed as dev dependencies:
 
 ```bash
-$ yarn add -D \
+yarn add -D \
   eslint \
   eslint-config-airbnb-base \
   eslint-plugin-import \
