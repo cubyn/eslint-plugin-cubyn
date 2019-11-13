@@ -73,7 +73,7 @@ module.exports = {
         'no-implicit-globals': 'error',
         'no-magic-numbers': ['error', {
           ignoreArrayIndexes: true,
-          ignore: [-1, 0, 1, 2, 10],
+          ignore: [-1, 0, 1, 2, 10, 200, 201, 400, 500],
           enforceConst: true,
         }],
         'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0 }],
