@@ -29,7 +29,7 @@ No. Modifies the code to match the rule.
 
 ## Installation
 
-~~`eslint`, `eslint-config-airbnb-base` and `eslint-plugin-import` packages are peer dependencies of Cubyn linter, there is no need to add them.~~
+~~`eslint`, `eslint-config-airbnb-base`, `eslint-plugin-jest` and `eslint-plugin-import` packages are peer dependencies of Cubyn linter, there is no need to add them.~~
 
 Since there were bugs ([1](https://github.com/airbnb/javascript/issues/1913) and [2](https://github.com/eslint/eslint/issues/8547)) in Yarn dependencies resolutions, the following packages must be installed as dev dependencies:
 
@@ -39,10 +39,11 @@ yarn add -D \
   eslint-config-airbnb-base \
   eslint-plugin-import \
   eslint-plugin-cubyn \
+  eslint-plugin-jest \
   eslint-plugin-unicorn
 ```
 
-Project's `devDependencies` must contains (if Jest):
+Project's `devDependencies` must contains:
 
 ```json
 "devDependencies": {
