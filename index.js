@@ -25,14 +25,14 @@ module.exports = {
 
         // Activations/updates
 
-        'cubyn/logger-context': 'error',
-        'cubyn/logger-error': 'error',
         'cubyn/no-invoke-topic': 'error',
         'cubyn/transaction': 'error',
 
         // Deactivations
 
         'cubyn/meta-permissions': 'off',
+        'cubyn/logger-context': 'off',
+        'cubyn/logger-error': 'off',
 
         //
         // Unicorn rules
@@ -127,6 +127,8 @@ module.exports = {
             'src/listeners/**/index.js',
           ],
           rules: {
+            'cubyn/logger-context': 'error',
+            'cubyn/logger-error': 'error',
             'no-param-reassign': ['error', {
               props: true,
               ignorePropertyModificationsFor: ['data', 'context'],
