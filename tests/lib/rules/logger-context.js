@@ -12,6 +12,10 @@ ruleTester.run('logger-context', rule, {
   ],
   invalid: [
     {
+      code: 'logger.warn("error message");',
+      errors: [{ messageId: 'missing', type: 'CallExpression' }],
+    },
+    {
       code: 'logger.warn("error message", {});',
       errors: [{ messageId: 'missing', type: 'CallExpression' }],
     },
