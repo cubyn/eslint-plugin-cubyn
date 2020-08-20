@@ -109,6 +109,7 @@ module.exports = {
         // Deactivations
 
         'no-plusplus': 'off',
+        'no-restricted-syntax': 'off',
         'no-use-before-define': 'off',
       },
       overrides: [
