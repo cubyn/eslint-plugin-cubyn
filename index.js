@@ -108,7 +108,9 @@ module.exports = {
 
         // Deactivations
 
+        'no-await-in-loop': 'off',
         'no-plusplus': 'off',
+        'no-restricted-syntax': 'off',
         'no-use-before-define': 'off',
       },
       overrides: [
