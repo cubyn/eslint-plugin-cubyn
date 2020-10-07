@@ -260,5 +260,22 @@ ruleTester.run('transaction', rule, {
       `,
       errors: [{ messageId: 'missingTransactionEnding', type: 'CallExpression' }],
     },
+    // transaction variable defined outside of method scope
+    {
+      code: `
+        let trx;
+        async function test() {
+          trx = await transaction.start(knex);
+          try {
+            await trx.commit();
+            return true;
+          } catch (error) {
+            await trx.rollback();
+            return false;
+          }
+        }
+      `,
+      errors: [{ messageId: 'missingTransactionDeclaration', type: 'CallExpression' }],
+    },
   ],
 });
