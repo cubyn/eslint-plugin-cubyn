@@ -3,6 +3,7 @@ const loggerError = require('./lib/rules/logger-error');
 const metaPermissions = require('./lib/rules/meta-permissions');
 const noInvokeTopic = require('./lib/rules/no-invoke-topic');
 const transaction = require('./lib/rules/transaction');
+const objectionJsUseLimitInFirst = require('./lib/rules/objection-js-use-limit-in-first');
 
 module.exports = {
   configs: {
@@ -116,6 +117,14 @@ module.exports = {
       overrides: [
         {
           files: [
+            'src/**/models/**/*.js',
+          ],
+          rules: {
+            'cubyn/objection-js-use-limit-in-first': 'error',
+          },
+        },
+        {
+          files: [
             'src/controllers/**/*.js',
           ],
           rules: {
@@ -156,6 +165,7 @@ module.exports = {
     'logger-error': loggerError,
     'meta-permissions': metaPermissions,
     'no-invoke-topic': noInvokeTopic,
+    'objection-js-use-limit-in-first': objectionJsUseLimitInFirst,
     transaction,
   },
 };
