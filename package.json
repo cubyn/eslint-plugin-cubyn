@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-cubyn",
-  "version": "2.4.1",
+  "version": "2.5.0",
   "description": "Enforce Cubyn standard style",
   "main": "index.js",
   "license": "ISC",
