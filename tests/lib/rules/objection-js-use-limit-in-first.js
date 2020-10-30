@@ -52,6 +52,17 @@ ruleTester.run('objection-js-use-limit-in-first', rule, {
       }
     `,
     `
+      module.exports = class PickingType extends guid(Model) {
+        static get tableName() {
+          return 'pickingTypes';
+        }
+
+        static get useLimitInFirst() {
+          return true;
+        }
+      };
+    `,
+    `
       const Model = require('../../../drivers/knex');
 
       module.exports = class Item extends Model {
