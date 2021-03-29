@@ -78,7 +78,6 @@ module.exports = {
           enforceConst: true,
         }],
         'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0 }],
-        'no-shadow': 'error',
         'no-undefined': 'error',
         'no-useless-call': 'error',
         'no-useless-catch': 'error',
