@@ -75,3 +75,47 @@ module.exports = {
   },
 }
 ```
+
+## Release
+
+### Test your changes
+
+Linking your project to use the local version of the package.
+
+```bash
+$ cd eslint-plugin-cubyn
+$ yarn link
+$ cd ../service-scub # or other package using 'eslint-plugin-cubyn'
+$ yarn link eslint-plugin-cubyn
+$ yarn install
+
+# Test your changes
+$ yarn lint
+
+# Unlink
+$ cd eslint-plugin-cubyn
+$ yarn unlink
+$ cd ../service-scub # or other package using 'eslint-plugin-cubyn'
+$ yarn unlink eslint-plugin-cubyn
+$ yarn install --check-files
+```
+
+Run project tests
+
+```bash
+$ cd eslint-plugin-cubyn
+$ yarn test
+```
+
+### Git flow release
+
+Bump the package version and release your changes with git flow.
+
+### Npm publish
+
+```bash
+$ cd eslint-plugin-cubyn
+$ npm publish
+```
+
+### Bump services to the new version
