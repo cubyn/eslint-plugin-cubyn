@@ -137,6 +137,7 @@ module.exports = {
             'src/listeners/**/index.js',
           ],
           rules: {
+            'cubyn/logger-context': 'error',
             'cubyn/logger-error': 'error',
             'no-param-reassign': ['error', {
               props: true,
